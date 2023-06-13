@@ -39,7 +39,7 @@ python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.05 --nesterov --momen
 ```
 
 
-#### CIFAR10
+#### CIFAR10 using Convolutional Neural Network (CNN) model
 ```
 python ./src/main.py --optim-method SGD --eta0 0.07 --nesterov --momentum 0.9 --weight-decay 0.0001 --train-epochs 164 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR10 --dataset CIFAR10 --dataroot ./data
 
@@ -65,7 +65,7 @@ python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.25 --nesterov --momen
 ```
 
 
-#### CIFAR100
+#### CIFAR100 using DenseNet-BC model
 ```
 python ./src/main.py --optim-method SGD --eta0 0.07 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
 
