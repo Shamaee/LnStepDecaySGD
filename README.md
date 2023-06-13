@@ -39,7 +39,7 @@ python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.05 --nesterov --momen
 ```
 
 
-#### CIFAR10 using Convolutional Neural Network (CNN) model
+#### CIFAR10 
 ```
 python ./src/main.py --optim-method SGD --eta0 0.07 --nesterov --momentum 0.9 --weight-decay 0.0001 --train-epochs 164 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR10 --dataset CIFAR10 --dataroot ./data
 
@@ -65,6 +65,31 @@ python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.25 --nesterov --momen
 ```
 
 
+#### CIFAR100 using Convolutional Neural Network (CNN) model
+```
+python ./src/main.py --optim-method SGD --eta0 0.07 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_Stage_Decay --eta0 0.07 --alpha 0.1 --milestones 15000 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_Stage_Decay --eta0 0.07 --alpha 0.1 --milestones 12000 18000 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_ReduceLROnPlateau --eta0 0.1 --alpha 0.5 --patience 3 --threshold 0.001 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_1sqrt_Decay --eta0 0.1 --alpha 0.015 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_1t_Decay --eta0 0.8 --alpha 0.004 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_Exp_Decay --eta0 0.2 --alpha 0.999744 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method Adam --eta0 0.0009 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_Cosine_Decay --eta0 0.09 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SLS-Armijo2 --eta0 5 --c 0.5 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+
+python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.09 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+```
+
 #### CIFAR100 using DenseNet-BC model
 ```
 python ./src/main.py --optim-method SGD --eta0 0.07 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
@@ -89,6 +114,4 @@ python ./src/main.py --optim-method SLS-Armijo2 --eta0 5 --c 0.5 --train-epochs 
 
 python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.53 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
 ```
-
-
 
