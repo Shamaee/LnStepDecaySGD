@@ -89,17 +89,27 @@ def draw_comps(logs_folder, fig_type):
                   'SGD_1t_Decay':'O(1/t) Step Size',
                   'SGD_1sqrt_Decay':'O(1/sqrt(t)) Step Size',
                   'SGD_Exp_Decay':'Exponential Step Size',
+                  'SGD_Exp2_Decay':'New Exponential Step Size',
                   'SGD_Cosine_Decay':'Cosine',
+                  'SGD_tan1_Decay':'tan1 Decay',
+                  'SGD_tan2_Decay':'tan2 Decay',
+                  'SGD_tan3_Decay':'tan3 Decay',
                   'SGD_ln1_Decay':'Ln',
+                  'SGD_sin1_Decay':'sin1 Decay',
+                  'SGD_sin2_Decay':'sin2 Decay',
                   'SLS-Armijo0':'SGD+Armijo',
                   'SLS-Armijo1':'SGD+Armijo',
-                  'SLS-Armijo2':'SGD+Armijo'}
+                  'SLS-Armijo2':'SGD+Armijo',
+                  'SCGS2':'stochastic conjugate gradiant'}
 
         colors = {'Adam':0, 'SGD_1sqrt_Decay':1, 'SGD_1t_Decay':2,
-                  'SGD_Exp_Decay':3, 'SGD_Cosine_Decay':6, 'SGD_ln1_Decay':4,'SLS-Armijo0':8,'SLS-Armijo1':8, 'SLS-Armijo2':8,'SGD':0, 'SGD_ReduceLROnPlateau':5, 'SGD_Exp_Decay':3,'SGD_Stage_Decay':1}
+                  'SGD_Exp_Decay':3, 'SGD_Cosine_Decay':6,'SGD_tan1_Decay':0,'SGD_tan2_Decay':5,'SGD_tan3_Decay':2, 'SGD_ln1_Decay':4,'SGD_sin1_Decay':5,'SGD_sin2_Decay':2,'SLS-Armijo0':8,
+                  'SLS-Armijo1':8, 'SLS-Armijo2':8,'trust-chauhan':0, 'SGD':0, 'SGD_ReduceLROnPlateau':5, 'SGD_Exp_Decay':3,
+                  'SGD_Stage_Decay':1,'SGD_Exp2_Decay':4, 'SCGS2':1}
     
         draw_methods = ['SGD', 'SGD_ReduceLROnPlateau',
-                        'SGD_Stage_Decay', 'SGD_Exp_Decay','Adam', 'SGD_Exp_Decay', 'SGD_1sqrt_Decay', 'SGD_1t_Decay','SGD_Cosine_Decay','SGD_ln1_Decay','SLS-Armijo0', 'SLS-Armijo1', 'SLS-Armijo2']
+                        'SGD_Stage_Decay', 'SGD_Exp_Decay','Adam', 'SGD_Exp_Decay', 'SGD_1sqrt_Decay', 'SGD_1t_Decay',
+                        'SGD_Cosine_Decay', 'SGD_tan1_Decay','SGD_tan2_Decay','SGD_tan3_Decay','SGD_ln1_Decay','SGD_sin1_Decay','SGD_sin2_Decay','SLS-Armijo0', 'SLS-Armijo1', 'SLS-Armijo2','trust-chauhan', 'SGD_Exp2_Decay','SCGS2']
 
         legend_order = [4, 3, 1, 2, 0, 5]
 
@@ -169,7 +179,7 @@ def draw_comps(logs_folder, fig_type):
         ax2.set_xlim(0, 50)  
         fig.suptitle('FashionMNIST-CNN', fontsize=24)
     elif dataset == 'CIFAR100':
-        fig.suptitle('CIFAR100-CNN', fontsize=24)
+        fig.suptitle('CIFAR100-DenseNet', fontsize=24)
     
     ax1.tick_params(axis='both', which='major', labelsize=fontsize-2)
     ax2.tick_params(axis='both', which='major', labelsize=fontsize-2)
@@ -244,10 +254,10 @@ def draw_comps(logs_folder, fig_type):
         axins2.set_xlim(120, 163) # Limit the region for zoom
         axins2.set_ylim(0.82, 0.94)
     elif dataset == 'CIFAR100':
-        axins1.set_xlim(80, 163) # Limit the region for zoom
-        axins1.set_ylim(0, 0.3)       
-        axins2.set_xlim(80, 163) # Limit the region for zoom
-        axins2.set_ylim(0.8, 0.94)
+        axins1.set_xlim(25, 60) # Limit the region for zoom
+        axins1.set_ylim(0, 1.5)       
+        axins2.set_xlim(25, 60) # Limit the region for zoom
+        axins2.set_ylim(0.52, 0.8)
 
     #plt.xticks(visible=False)  # Not present ticks
     #plt.yticks(visible=False)
