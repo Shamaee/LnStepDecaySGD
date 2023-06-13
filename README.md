@@ -87,7 +87,7 @@ python ./src/main.py --optim-method SGD_Cosine_Decay --eta0 0.09 --nesterov --mo
 
 python ./src/main.py --optim-method SLS-Armijo2 --eta0 5 --c 0.5 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
 
-python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.09 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
+python ./src/main.py --optim-method SGD_ln1_Decay --eta0 0.53 --nesterov --momentum 0.9 --weight-decay 0.0005 --train-epochs 50 --batchsize 128 --eval-interval 1 --use-cuda --log-folder ./logs/CIFAR100 --dataset CIFAR100 --dataroot ./data
 ```
 
 
